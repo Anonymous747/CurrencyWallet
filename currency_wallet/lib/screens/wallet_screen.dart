@@ -1,9 +1,9 @@
-import 'package:currency_wallet/models/currency_model.dart';
+import 'package:currency_wallet/models/currency_cell_model.dart';
 import 'package:flutter/material.dart';
 
 class WalletScreen extends StatelessWidget {
-  final List<CurrencyModel> currencies = [
-    CurrencyModel(
+  final List<CurrencyCellModel> currencies = [
+    CurrencyCellModel(
       currency: 'Euro',
       ratio: '1',
       todaysRate: 3.14,

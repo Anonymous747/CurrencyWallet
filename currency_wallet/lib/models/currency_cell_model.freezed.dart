@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'currency_model.dart';
+part of 'currency_cell_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$CurrencyModelTearOff {
-  const _$CurrencyModelTearOff();
+class _$CurrencyCellModelTearOff {
+  const _$CurrencyCellModelTearOff();
 
-  _CurrencyModel call(
+  _CurrencyCellModel call(
       {required String currency,
       required String ratio,
       required double todaysRate,
       required double tomorrowsRate}) {
-    return _CurrencyModel(
+    return _CurrencyCellModel(
       currency: currency,
       ratio: ratio,
       todaysRate: todaysRate,
@@ -32,37 +32,37 @@ class _$CurrencyModelTearOff {
 }
 
 /// @nodoc
-const $CurrencyModel = _$CurrencyModelTearOff();
+const $CurrencyCellModel = _$CurrencyCellModelTearOff();
 
 /// @nodoc
-mixin _$CurrencyModel {
+mixin _$CurrencyCellModel {
   String get currency => throw _privateConstructorUsedError;
   String get ratio => throw _privateConstructorUsedError;
   double get todaysRate => throw _privateConstructorUsedError;
   double get tomorrowsRate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CurrencyModelCopyWith<CurrencyModel> get copyWith =>
+  $CurrencyCellModelCopyWith<CurrencyCellModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CurrencyModelCopyWith<$Res> {
-  factory $CurrencyModelCopyWith(
-          CurrencyModel value, $Res Function(CurrencyModel) then) =
-      _$CurrencyModelCopyWithImpl<$Res>;
+abstract class $CurrencyCellModelCopyWith<$Res> {
+  factory $CurrencyCellModelCopyWith(
+          CurrencyCellModel value, $Res Function(CurrencyCellModel) then) =
+      _$CurrencyCellModelCopyWithImpl<$Res>;
   $Res call(
       {String currency, String ratio, double todaysRate, double tomorrowsRate});
 }
 
 /// @nodoc
-class _$CurrencyModelCopyWithImpl<$Res>
-    implements $CurrencyModelCopyWith<$Res> {
-  _$CurrencyModelCopyWithImpl(this._value, this._then);
+class _$CurrencyCellModelCopyWithImpl<$Res>
+    implements $CurrencyCellModelCopyWith<$Res> {
+  _$CurrencyCellModelCopyWithImpl(this._value, this._then);
 
-  final CurrencyModel _value;
+  final CurrencyCellModel _value;
   // ignore: unused_field
-  final $Res Function(CurrencyModel) _then;
+  final $Res Function(CurrencyCellModel) _then;
 
   @override
   $Res call({
@@ -93,26 +93,26 @@ class _$CurrencyModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CurrencyModelCopyWith<$Res>
-    implements $CurrencyModelCopyWith<$Res> {
-  factory _$CurrencyModelCopyWith(
-          _CurrencyModel value, $Res Function(_CurrencyModel) then) =
-      __$CurrencyModelCopyWithImpl<$Res>;
+abstract class _$CurrencyCellModelCopyWith<$Res>
+    implements $CurrencyCellModelCopyWith<$Res> {
+  factory _$CurrencyCellModelCopyWith(
+          _CurrencyCellModel value, $Res Function(_CurrencyCellModel) then) =
+      __$CurrencyCellModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {String currency, String ratio, double todaysRate, double tomorrowsRate});
 }
 
 /// @nodoc
-class __$CurrencyModelCopyWithImpl<$Res>
-    extends _$CurrencyModelCopyWithImpl<$Res>
-    implements _$CurrencyModelCopyWith<$Res> {
-  __$CurrencyModelCopyWithImpl(
-      _CurrencyModel _value, $Res Function(_CurrencyModel) _then)
-      : super(_value, (v) => _then(v as _CurrencyModel));
+class __$CurrencyCellModelCopyWithImpl<$Res>
+    extends _$CurrencyCellModelCopyWithImpl<$Res>
+    implements _$CurrencyCellModelCopyWith<$Res> {
+  __$CurrencyCellModelCopyWithImpl(
+      _CurrencyCellModel _value, $Res Function(_CurrencyCellModel) _then)
+      : super(_value, (v) => _then(v as _CurrencyCellModel));
 
   @override
-  _CurrencyModel get _value => super._value as _CurrencyModel;
+  _CurrencyCellModel get _value => super._value as _CurrencyCellModel;
 
   @override
   $Res call({
@@ -121,7 +121,7 @@ class __$CurrencyModelCopyWithImpl<$Res>
     Object? todaysRate = freezed,
     Object? tomorrowsRate = freezed,
   }) {
-    return _then(_CurrencyModel(
+    return _then(_CurrencyCellModel(
       currency: currency == freezed
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -144,8 +144,8 @@ class __$CurrencyModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CurrencyModel implements _CurrencyModel {
-  const _$_CurrencyModel(
+class _$_CurrencyCellModel implements _CurrencyCellModel {
+  const _$_CurrencyCellModel(
       {required this.currency,
       required this.ratio,
       required this.todaysRate,
@@ -162,13 +162,13 @@ class _$_CurrencyModel implements _CurrencyModel {
 
   @override
   String toString() {
-    return 'CurrencyModel(currency: $currency, ratio: $ratio, todaysRate: $todaysRate, tomorrowsRate: $tomorrowsRate)';
+    return 'CurrencyCellModel(currency: $currency, ratio: $ratio, todaysRate: $todaysRate, tomorrowsRate: $tomorrowsRate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CurrencyModel &&
+        (other is _CurrencyCellModel &&
             (identical(other.currency, currency) ||
                 const DeepCollectionEquality()
                     .equals(other.currency, currency)) &&
@@ -192,16 +192,16 @@ class _$_CurrencyModel implements _CurrencyModel {
 
   @JsonKey(ignore: true)
   @override
-  _$CurrencyModelCopyWith<_CurrencyModel> get copyWith =>
-      __$CurrencyModelCopyWithImpl<_CurrencyModel>(this, _$identity);
+  _$CurrencyCellModelCopyWith<_CurrencyCellModel> get copyWith =>
+      __$CurrencyCellModelCopyWithImpl<_CurrencyCellModel>(this, _$identity);
 }
 
-abstract class _CurrencyModel implements CurrencyModel {
-  const factory _CurrencyModel(
+abstract class _CurrencyCellModel implements CurrencyCellModel {
+  const factory _CurrencyCellModel(
       {required String currency,
       required String ratio,
       required double todaysRate,
-      required double tomorrowsRate}) = _$_CurrencyModel;
+      required double tomorrowsRate}) = _$_CurrencyCellModel;
 
   @override
   String get currency => throw _privateConstructorUsedError;
@@ -213,6 +213,6 @@ abstract class _CurrencyModel implements CurrencyModel {
   double get tomorrowsRate => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CurrencyModelCopyWith<_CurrencyModel> get copyWith =>
+  _$CurrencyCellModelCopyWith<_CurrencyCellModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
