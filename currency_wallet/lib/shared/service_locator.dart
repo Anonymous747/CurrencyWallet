@@ -9,7 +9,8 @@ abstract class ServiceLocator {
 
   T get<T extends Object>() => getIt.get<T>();
 
-  T getWithParam<T extends Object, P extends Object>({P? param}) => getIt.get<T>(param1: param);
+  T getWithParam<T extends Object, P extends Object>({P? param}) =>
+      getIt.get<T>(param1: param);
 
   Future<T> getAsync<T extends Object>() => getIt.getAsync<T>();
 
@@ -29,7 +30,8 @@ abstract class ServiceLocator {
   }
 
   @protected
-  void registerSingletonAsync<T extends Object>(ValueGetter<Future<T>> factoryfunc,
+  void registerSingletonAsync<T extends Object>(
+      ValueGetter<Future<T>> factoryfunc,
       {Iterable<Type>? dependsOn}) {
     getIt.registerSingletonAsync(factoryfunc, dependsOn: dependsOn);
   }
@@ -48,7 +50,8 @@ abstract class ServiceLocator {
   }
 
   @protected
-  void registerFactoryParam<T extends Object, P1, P2>(T Function(P1?, P2?) factoryfunc,
+  void registerFactoryParam<T extends Object, P1, P2>(
+      T Function(P1?, P2?) factoryfunc,
       {String? instanceName}) {
     getIt.registerFactoryParam(factoryfunc, instanceName: instanceName);
   }

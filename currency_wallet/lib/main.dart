@@ -18,9 +18,10 @@ class MyApp extends StatelessWidget {
       initialRoute: kHomeScreenRouteName,
       routes: {
         kHomeScreenRouteName: (_) => HomeScreen(),
-        kWalletScreenRouteName: (_) => WalletScreen().createWithProvider<CurrencyBloc>(
-          (_) => BlocFactory.instance.get<CurrencyBloc>(),
-        ),
+        kWalletScreenRouteName: (_) =>
+            WalletScreen().createWithProvider<CurrencyBloc>(
+              (_) => BlocFactory.instance.get<CurrencyBloc>(),
+            ),
       },
     );
   }

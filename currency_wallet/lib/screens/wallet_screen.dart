@@ -28,21 +28,29 @@ class WalletScreen extends StatelessWidget {
       ),
       body: BlocBuilder<CurrencyBloc, CurrencyState>(
         builder: (context, state) {
-          return ListView.builder(
-              itemCount: currencies.length + 1,
-              itemBuilder: (context, index) {
-                return index == 0
-                    ? DateRow(
-                        currentDay: '13.05.1991',
-                        tomorrowsDay: '14.05.1991',
-                      )
-                    : CurrencyRow(
-                        currency: currencies[index - 1].currency,
-                        ratio: currencies[index - 1].ratio,
-                        todaysRate: currencies[index - 1].todaysRate,
-                        tomorrowsRate: currencies[index - 1].tomorrowsRate,
-                      );
-              });
+          return state.maybeMap(
+            loaded: (loaded) {
+              return ListView.builder(
+                itemCount: currencies.length + 1,
+                itemBuilder: (context, index) {
+                  return index == 0
+                      ? DateRow(
+                          currentDay: '13.05.1991',
+                          tomorrowsDay: '14.05.1991',
+                        )
+                      : CurrencyRow(
+                          currency: currencies[index - 1].currency,
+                          ratio: currencies[index - 1].ratio,
+                          todaysRate: currencies[index - 1].todaysRate,
+                          tomorrowsRate: currencies[index - 1].tomorrowsRate,
+                        );
+                },
+              );
+            },
+            orElse: () => Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
         },
       ),
     );

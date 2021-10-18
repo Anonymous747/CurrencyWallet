@@ -10,10 +10,13 @@ part 'currency_bloc.freezed.dart';
 
 class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
   final CurrencyService _currencyService;
-  
+
   CurrencyBloc({
     required CurrencyService currencyService,
-  }) : _currencyService = currencyService, super(_InitialCurrencyState(),);
+  })  : _currencyService = currencyService,
+        super(
+          _InitialCurrencyState(),
+        );
 
   @override
   Stream<CurrencyState> mapEventToState(
@@ -22,12 +25,11 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
     event.map(
       init: _handleInitEvent,
     );
-  } 
+  }
 
   Stream<CurrencyState> _handleInitEvent(_InitCurrencyEvent event) async* {
     yield CurrencyState.loading();
 
     final currencyModel = _currencyService.getCurrencyListForDefinedDate();
-    
   }
 }
