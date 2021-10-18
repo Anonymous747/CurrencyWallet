@@ -1,4 +1,4 @@
-import 'package:currency_wallet/blocs/currency_bloc/currency_bloc.dart';
+import 'package:currency_wallet/blocs/index.dart';
 import 'package:currency_wallet/shared/service_locator.dart';
 
 class BlocFactory extends ServiceLocator {

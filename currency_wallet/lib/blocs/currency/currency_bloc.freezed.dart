@@ -183,6 +183,14 @@ class _$CurrencyStateTearOff {
   _InitialCurrencyState initial() {
     return const _InitialCurrencyState();
   }
+
+  _LoadingCurrencyState loading() {
+    return const _LoadingCurrencyState();
+  }
+
+  _LoadedCurrencyState loaded() {
+    return const _LoadedCurrencyState();
+  }
 }
 
 /// @nodoc
@@ -193,32 +201,44 @@ mixin _$CurrencyState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialCurrencyState value) initial,
+    required TResult Function(_LoadingCurrencyState value) loading,
+    required TResult Function(_LoadedCurrencyState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -282,6 +302,8 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
   }) {
     return initial();
   }
@@ -290,6 +312,8 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
   }) {
     return initial?.call();
   }
@@ -298,6 +322,8 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -310,6 +336,8 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialCurrencyState value) initial,
+    required TResult Function(_LoadingCurrencyState value) loading,
+    required TResult Function(_LoadedCurrencyState value) loaded,
   }) {
     return initial(this);
   }
@@ -318,6 +346,8 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -326,6 +356,8 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -337,4 +369,224 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
 
 abstract class _InitialCurrencyState implements CurrencyState {
   const factory _InitialCurrencyState() = _$_InitialCurrencyState;
+}
+
+/// @nodoc
+abstract class _$LoadingCurrencyStateCopyWith<$Res> {
+  factory _$LoadingCurrencyStateCopyWith(_LoadingCurrencyState value,
+          $Res Function(_LoadingCurrencyState) then) =
+      __$LoadingCurrencyStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCurrencyStateCopyWithImpl<$Res>
+    extends _$CurrencyStateCopyWithImpl<$Res>
+    implements _$LoadingCurrencyStateCopyWith<$Res> {
+  __$LoadingCurrencyStateCopyWithImpl(
+      _LoadingCurrencyState _value, $Res Function(_LoadingCurrencyState) _then)
+      : super(_value, (v) => _then(v as _LoadingCurrencyState));
+
+  @override
+  _LoadingCurrencyState get _value => super._value as _LoadingCurrencyState;
+}
+
+/// @nodoc
+
+class _$_LoadingCurrencyState implements _LoadingCurrencyState {
+  const _$_LoadingCurrencyState();
+
+  @override
+  String toString() {
+    return 'CurrencyState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadingCurrencyState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCurrencyState value) initial,
+    required TResult Function(_LoadingCurrencyState value) loading,
+    required TResult Function(_LoadedCurrencyState value) loaded,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingCurrencyState implements CurrencyState {
+  const factory _LoadingCurrencyState() = _$_LoadingCurrencyState;
+}
+
+/// @nodoc
+abstract class _$LoadedCurrencyStateCopyWith<$Res> {
+  factory _$LoadedCurrencyStateCopyWith(_LoadedCurrencyState value,
+          $Res Function(_LoadedCurrencyState) then) =
+      __$LoadedCurrencyStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadedCurrencyStateCopyWithImpl<$Res>
+    extends _$CurrencyStateCopyWithImpl<$Res>
+    implements _$LoadedCurrencyStateCopyWith<$Res> {
+  __$LoadedCurrencyStateCopyWithImpl(
+      _LoadedCurrencyState _value, $Res Function(_LoadedCurrencyState) _then)
+      : super(_value, (v) => _then(v as _LoadedCurrencyState));
+
+  @override
+  _LoadedCurrencyState get _value => super._value as _LoadedCurrencyState;
+}
+
+/// @nodoc
+
+class _$_LoadedCurrencyState implements _LoadedCurrencyState {
+  const _$_LoadedCurrencyState();
+
+  @override
+  String toString() {
+    return 'CurrencyState.loaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadedCurrencyState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+  }) {
+    return loaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+  }) {
+    return loaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCurrencyState value) initial,
+    required TResult Function(_LoadingCurrencyState value) loading,
+    required TResult Function(_LoadedCurrencyState value) loaded,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCurrencyState value)? initial,
+    TResult Function(_LoadingCurrencyState value)? loading,
+    TResult Function(_LoadedCurrencyState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadedCurrencyState implements CurrencyState {
+  const factory _LoadedCurrencyState() = _$_LoadedCurrencyState;
 }
