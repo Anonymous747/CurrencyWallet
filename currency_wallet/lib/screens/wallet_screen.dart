@@ -1,5 +1,7 @@
-import 'package:currency_wallet/models/currency_cell_model.dart';
+import 'package:currency_wallet/blocs/index.dart';
+import 'package:currency_wallet/models/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WalletScreen extends StatelessWidget {
   final List<CurrencyCellModel> currencies = [
@@ -24,21 +26,25 @@ class WalletScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(
-          itemCount: currencies.length + 1,
-          itemBuilder: (context, index) {
-            return index == 0
-                ? DateRow(
-                    currentDay: '13.05.1991',
-                    tomorrowsDay: '14.05.1991',
-                  )
-                : CurrencyRow(
-                    currency: currencies[index - 1].currency,
-                    ratio: currencies[index - 1].ratio,
-                    todaysRate: currencies[index - 1].todaysRate,
-                    tomorrowsRate: currencies[index - 1].tomorrowsRate,
-                  );
-          }),
+      body: BlocBuilder<CurrencyBloc, CurrencyState>(
+        builder: (context, state) {
+          return ListView.builder(
+              itemCount: currencies.length + 1,
+              itemBuilder: (context, index) {
+                return index == 0
+                    ? DateRow(
+                        currentDay: '13.05.1991',
+                        tomorrowsDay: '14.05.1991',
+                      )
+                    : CurrencyRow(
+                        currency: currencies[index - 1].currency,
+                        ratio: currencies[index - 1].ratio,
+                        todaysRate: currencies[index - 1].todaysRate,
+                        tomorrowsRate: currencies[index - 1].tomorrowsRate,
+                      );
+              });
+        },
+      ),
     );
   }
 }

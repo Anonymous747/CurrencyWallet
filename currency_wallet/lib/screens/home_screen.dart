@@ -1,4 +1,4 @@
-import 'package:currency_wallet/source/constants.dart';
+import 'package:currency_wallet/common/index.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

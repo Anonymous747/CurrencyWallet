@@ -1,4 +1,4 @@
-import 'package:currency_wallet/models/currency_model.dart';
+import 'package:currency_wallet/models/index.dart';
 import 'package:http/http.dart' as http;
 
 class CurrencyService {

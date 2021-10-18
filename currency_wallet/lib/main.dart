@@ -1,6 +1,7 @@
 import 'package:currency_wallet/blocs/bloc_factory.dart';
+import 'package:currency_wallet/blocs/index.dart';
+import 'package:currency_wallet/common/index.dart';
 import 'package:currency_wallet/screens/index.dart';
-import 'package:currency_wallet/source/constants.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
       initialRoute: kHomeScreenRouteName,
       routes: {
         kHomeScreenRouteName: (_) => HomeScreen(),
-        kWalletScreenRouteName: (_) => WalletScreen(),
+        kWalletScreenRouteName: (_) => WalletScreen().createWithProvider<CurrencyBloc>(
+          (_) => BlocFactory.instance.get<CurrencyBloc>(),
+        ),
       },
     );
   }
