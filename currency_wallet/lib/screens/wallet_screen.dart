@@ -1,4 +1,5 @@
 import 'package:currency_wallet/blocs/index.dart';
+import 'package:currency_wallet/common/context_extension.dart';
 import 'package:currency_wallet/models/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,14 +10,14 @@ class WalletScreen extends StatefulWidget {
 }
 
 class _WalletScreenState extends State<WalletScreen> {
-  final List<CurrencyCellModel> currencies = [
-    CurrencyCellModel(
-      currency: 'Euro',
-      ratio: '1',
-      todaysRate: 3.14,
-      tomorrowsRate: 3.15,
-    ),
-  ];
+  late CurrencyBloc bloc;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    bloc = context.bloc<CurrencyBloc>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,21 +34,24 @@ class _WalletScreenState extends State<WalletScreen> {
       ),
       body: BlocBuilder<CurrencyBloc, CurrencyState>(
         builder: (context, state) {
+
           return state.maybeMap(
             loaded: (loaded) {
+          final currencies = loaded.currencyViewModel.currencies;
+              
               return ListView.builder(
-                itemCount: currencies.length + 1,
+                itemCount:  currencies.length + 1,
                 itemBuilder: (context, index) {
                   return index == 0
                       ? DateRow(
-                          currentDay: '13.05.1991',
+                          currentDay: currencies[0].date,
                           tomorrowsDay: '14.05.1991',
                         )
                       : CurrencyRow(
-                          currency: currencies[index - 1].currency,
-                          ratio: currencies[index - 1].ratio,
-                          todaysRate: currencies[index - 1].todaysRate,
-                          tomorrowsRate: currencies[index - 1].tomorrowsRate,
+                          currency: currencies[index - 1].curName,
+                          ratio: currencies[index - 1].curScale.toString(),
+                          todaysRate: currencies[index - 1].curOfficialRate,
+                          tomorrowsRate: currencies[index - 1].curOfficialRate,
                         );
                 },
               );

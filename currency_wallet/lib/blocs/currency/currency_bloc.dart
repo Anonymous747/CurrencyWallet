@@ -25,7 +25,7 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
   Stream<CurrencyState> mapEventToState(
     CurrencyEvent event,
   ) async* {
-    event.map(
+    yield* event.map(
       init: _handleInitEvent,
     );
   }
