@@ -188,8 +188,10 @@ class _$CurrencyStateTearOff {
     return const _LoadingCurrencyState();
   }
 
-  _LoadedCurrencyState loaded() {
-    return const _LoadedCurrencyState();
+  _LoadedCurrencyState loaded({required CurrencyViewModel currencyViewModel}) {
+    return _LoadedCurrencyState(
+      currencyViewModel: currencyViewModel,
+    );
   }
 }
 
@@ -202,21 +204,21 @@ mixin _$CurrencyState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(CurrencyViewModel currencyViewModel) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -303,7 +305,7 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(CurrencyViewModel currencyViewModel) loaded,
   }) {
     return initial();
   }
@@ -313,7 +315,7 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
   }) {
     return initial?.call();
   }
@@ -323,7 +325,7 @@ class _$_InitialCurrencyState implements _InitialCurrencyState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -413,7 +415,7 @@ class _$_LoadingCurrencyState implements _LoadingCurrencyState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(CurrencyViewModel currencyViewModel) loaded,
   }) {
     return loading();
   }
@@ -423,7 +425,7 @@ class _$_LoadingCurrencyState implements _LoadingCurrencyState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
   }) {
     return loading?.call();
   }
@@ -433,7 +435,7 @@ class _$_LoadingCurrencyState implements _LoadingCurrencyState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -486,6 +488,7 @@ abstract class _$LoadedCurrencyStateCopyWith<$Res> {
   factory _$LoadedCurrencyStateCopyWith(_LoadedCurrencyState value,
           $Res Function(_LoadedCurrencyState) then) =
       __$LoadedCurrencyStateCopyWithImpl<$Res>;
+  $Res call({CurrencyViewModel currencyViewModel});
 }
 
 /// @nodoc
@@ -498,34 +501,61 @@ class __$LoadedCurrencyStateCopyWithImpl<$Res>
 
   @override
   _LoadedCurrencyState get _value => super._value as _LoadedCurrencyState;
+
+  @override
+  $Res call({
+    Object? currencyViewModel = freezed,
+  }) {
+    return _then(_LoadedCurrencyState(
+      currencyViewModel: currencyViewModel == freezed
+          ? _value.currencyViewModel
+          : currencyViewModel // ignore: cast_nullable_to_non_nullable
+              as CurrencyViewModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_LoadedCurrencyState implements _LoadedCurrencyState {
-  const _$_LoadedCurrencyState();
+  const _$_LoadedCurrencyState({required this.currencyViewModel});
+
+  @override
+  final CurrencyViewModel currencyViewModel;
 
   @override
   String toString() {
-    return 'CurrencyState.loaded()';
+    return 'CurrencyState.loaded(currencyViewModel: $currencyViewModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadedCurrencyState);
+    return identical(this, other) ||
+        (other is _LoadedCurrencyState &&
+            (identical(other.currencyViewModel, currencyViewModel) ||
+                const DeepCollectionEquality()
+                    .equals(other.currencyViewModel, currencyViewModel)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(currencyViewModel);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LoadedCurrencyStateCopyWith<_LoadedCurrencyState> get copyWith =>
+      __$LoadedCurrencyStateCopyWithImpl<_LoadedCurrencyState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(CurrencyViewModel currencyViewModel) loaded,
   }) {
-    return loaded();
+    return loaded(currencyViewModel);
   }
 
   @override
@@ -533,9 +563,9 @@ class _$_LoadedCurrencyState implements _LoadedCurrencyState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
   }) {
-    return loaded?.call();
+    return loaded?.call(currencyViewModel);
   }
 
   @override
@@ -543,11 +573,11 @@ class _$_LoadedCurrencyState implements _LoadedCurrencyState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(CurrencyViewModel currencyViewModel)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(currencyViewModel);
     }
     return orElse();
   }
@@ -588,5 +618,11 @@ class _$_LoadedCurrencyState implements _LoadedCurrencyState {
 }
 
 abstract class _LoadedCurrencyState implements CurrencyState {
-  const factory _LoadedCurrencyState() = _$_LoadedCurrencyState;
+  const factory _LoadedCurrencyState(
+      {required CurrencyViewModel currencyViewModel}) = _$_LoadedCurrencyState;
+
+  CurrencyViewModel get currencyViewModel => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadedCurrencyStateCopyWith<_LoadedCurrencyState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

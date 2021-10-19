@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
         kHomeScreenRouteName: (_) => HomeScreen(),
         kWalletScreenRouteName: (_) =>
             WalletScreen().createWithProvider<CurrencyBloc>(
-              (_) => BlocFactory.instance.get<CurrencyBloc>(),
+              (_) => BlocFactory.instance.get<CurrencyBloc>()
+                ..add(CurrencyEvent.init()),
             ),
       },
     );

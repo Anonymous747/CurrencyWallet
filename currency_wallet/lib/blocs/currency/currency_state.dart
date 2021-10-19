@@ -6,5 +6,7 @@ class CurrencyState with _$CurrencyState {
 
   const factory CurrencyState.loading() = _LoadingCurrencyState;
 
-  const factory CurrencyState.loaded() = _LoadedCurrencyState;
+  const factory CurrencyState.loaded({
+    required CurrencyViewModel currencyViewModel,
+  }) = _LoadedCurrencyState;
 }

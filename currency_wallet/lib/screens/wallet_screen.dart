@@ -3,7 +3,12 @@ import 'package:currency_wallet/models/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class WalletScreen extends StatelessWidget {
+class WalletScreen extends StatefulWidget {
+  @override
+  State<WalletScreen> createState() => _WalletScreenState();
+}
+
+class _WalletScreenState extends State<WalletScreen> {
   final List<CurrencyCellModel> currencies = [
     CurrencyCellModel(
       currency: 'Euro',
