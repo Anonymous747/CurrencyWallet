@@ -1,4 +1,5 @@
 import 'package:currency_wallet/blocs/index.dart';
+import 'package:currency_wallet/blocs/settings/bloc/settings_bloc.dart';
 import 'package:currency_wallet/mappers/currency_mapper.dart';
 import 'package:currency_wallet/services/index.dart';
 import 'package:currency_wallet/shared/service_locator.dart';
@@ -11,6 +12,7 @@ class BlocFactory extends ServiceLocator {
           currencyService: get(),
           currencyMapper: get(),
         ));
+    registerFactory<SettingsBloc>(() => SettingsBloc());
     registerFactory<CurrencyService>(() => CurrencyService());
     registerFactory<CurrencyMapper>(() => CurrencyMapper());
   }

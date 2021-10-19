@@ -1,5 +1,5 @@
-import 'package:currency_wallet/blocs/bloc_factory.dart';
 import 'package:currency_wallet/blocs/index.dart';
+import 'package:currency_wallet/blocs/settings/bloc/settings_bloc.dart';
 import 'package:currency_wallet/common/index.dart';
 import 'package:currency_wallet/screens/index.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +23,9 @@ class MyApp extends StatelessWidget {
               (_) => BlocFactory.instance.get<CurrencyBloc>()
                 ..add(CurrencyEvent.init()),
             ),
+        kSettingsScreenRouteName: (_) => SettingsPage()
+            .createWithProvider<SettingsBloc>(
+                (context) => BlocFactory.instance.get<SettingsBloc>()),
       },
     );
   }

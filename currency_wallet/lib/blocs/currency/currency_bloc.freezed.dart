@@ -20,6 +20,12 @@ class _$CurrencyEventTearOff {
   _InitCurrencyEvent init() {
     return const _InitCurrencyEvent();
   }
+
+  _GoToSettingsCurrencyEvent goToSettings(BuildContext context) {
+    return _GoToSettingsCurrencyEvent(
+      context,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,32 +36,38 @@ mixin _$CurrencyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function(BuildContext context) goToSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(BuildContext context)? goToSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(BuildContext context)? goToSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitCurrencyEvent value) init,
+    required TResult Function(_GoToSettingsCurrencyEvent value) goToSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitCurrencyEvent value)? init,
+    TResult Function(_GoToSettingsCurrencyEvent value)? goToSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitCurrencyEvent value)? init,
+    TResult Function(_GoToSettingsCurrencyEvent value)? goToSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +131,7 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function(BuildContext context) goToSettings,
   }) {
     return init();
   }
@@ -127,6 +140,7 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(BuildContext context)? goToSettings,
   }) {
     return init?.call();
   }
@@ -135,6 +149,7 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(BuildContext context)? goToSettings,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -147,6 +162,7 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitCurrencyEvent value) init,
+    required TResult Function(_GoToSettingsCurrencyEvent value) goToSettings,
   }) {
     return init(this);
   }
@@ -155,6 +171,7 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitCurrencyEvent value)? init,
+    TResult Function(_GoToSettingsCurrencyEvent value)? goToSettings,
   }) {
     return init?.call(this);
   }
@@ -163,6 +180,7 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitCurrencyEvent value)? init,
+    TResult Function(_GoToSettingsCurrencyEvent value)? goToSettings,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -174,6 +192,144 @@ class _$_InitCurrencyEvent implements _InitCurrencyEvent {
 
 abstract class _InitCurrencyEvent implements CurrencyEvent {
   const factory _InitCurrencyEvent() = _$_InitCurrencyEvent;
+}
+
+/// @nodoc
+abstract class _$GoToSettingsCurrencyEventCopyWith<$Res> {
+  factory _$GoToSettingsCurrencyEventCopyWith(_GoToSettingsCurrencyEvent value,
+          $Res Function(_GoToSettingsCurrencyEvent) then) =
+      __$GoToSettingsCurrencyEventCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$GoToSettingsCurrencyEventCopyWithImpl<$Res>
+    extends _$CurrencyEventCopyWithImpl<$Res>
+    implements _$GoToSettingsCurrencyEventCopyWith<$Res> {
+  __$GoToSettingsCurrencyEventCopyWithImpl(_GoToSettingsCurrencyEvent _value,
+      $Res Function(_GoToSettingsCurrencyEvent) _then)
+      : super(_value, (v) => _then(v as _GoToSettingsCurrencyEvent));
+
+  @override
+  _GoToSettingsCurrencyEvent get _value =>
+      super._value as _GoToSettingsCurrencyEvent;
+
+  @override
+  $Res call({
+    Object? context = freezed,
+  }) {
+    return _then(_GoToSettingsCurrencyEvent(
+      context == freezed
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GoToSettingsCurrencyEvent implements _GoToSettingsCurrencyEvent {
+  const _$_GoToSettingsCurrencyEvent(this.context);
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'CurrencyEvent.goToSettings(context: $context)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GoToSettingsCurrencyEvent &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GoToSettingsCurrencyEventCopyWith<_GoToSettingsCurrencyEvent>
+      get copyWith =>
+          __$GoToSettingsCurrencyEventCopyWithImpl<_GoToSettingsCurrencyEvent>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function(BuildContext context) goToSettings,
+  }) {
+    return goToSettings(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(BuildContext context)? goToSettings,
+  }) {
+    return goToSettings?.call(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(BuildContext context)? goToSettings,
+    required TResult orElse(),
+  }) {
+    if (goToSettings != null) {
+      return goToSettings(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitCurrencyEvent value) init,
+    required TResult Function(_GoToSettingsCurrencyEvent value) goToSettings,
+  }) {
+    return goToSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitCurrencyEvent value)? init,
+    TResult Function(_GoToSettingsCurrencyEvent value)? goToSettings,
+  }) {
+    return goToSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitCurrencyEvent value)? init,
+    TResult Function(_GoToSettingsCurrencyEvent value)? goToSettings,
+    required TResult orElse(),
+  }) {
+    if (goToSettings != null) {
+      return goToSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GoToSettingsCurrencyEvent implements CurrencyEvent {
+  const factory _GoToSettingsCurrencyEvent(BuildContext context) =
+      _$_GoToSettingsCurrencyEvent;
+
+  BuildContext get context => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$GoToSettingsCurrencyEventCopyWith<_GoToSettingsCurrencyEvent>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

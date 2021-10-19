@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:currency_wallet/mappers/index.dart';
 import 'package:currency_wallet/services/index.dart';
 import 'package:currency_wallet/view_models/currency_view_model.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'currency_event.dart';
@@ -26,8 +27,10 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
     CurrencyEvent event,
   ) async* {
     yield* event.map(
-      init: _handleInitEvent,
-    );
+        init: _handleInitEvent,
+        goToSettings: (data) async* {
+          _handleGoToSettingsEvent(data.context);
+        });
   }
 
   Stream<CurrencyState> _handleInitEvent(_InitCurrencyEvent event) async* {
@@ -38,5 +41,9 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
     final viewModel = _currencyMapper.mapToViewModel(currencyModel);
 
     yield CurrencyState.loaded(currencyViewModel: viewModel);
+  }
+
+  void _handleGoToSettingsEvent(BuildContext context) {
+    Navigator.of(context).pushNamed('/sp');
   }
 }
