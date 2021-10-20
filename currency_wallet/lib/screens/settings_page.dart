@@ -21,9 +21,7 @@ class _SettingsPageState extends State<SettingsPage> {
               Icons.check,
               size: 30.0,
             ),
-            onPressed: () {
-              
-            },
+            onPressed: () {},
           ),
         ],
       ),

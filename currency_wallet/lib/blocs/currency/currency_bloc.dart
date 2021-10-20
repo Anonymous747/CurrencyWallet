@@ -38,7 +38,11 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
 
     final currencyModel =
         await _currencyService.getCurrencyListForDefinedDate();
-    final viewModel = _currencyMapper.mapToViewModel(currencyModel);
+    final viewModel = _currencyMapper.mapToViewModel(
+      currencyModel,
+      firstDate: DateTime.parse(currencyModel.first.date),
+      secondDate: DateTime.parse(currencyModel.first.date),
+    );
 
     yield CurrencyState.loaded(currencyViewModel: viewModel);
   }
