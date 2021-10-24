@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "983752186171",
+    "project_id": "wallet-d4381",
+    "storage_bucket": "wallet-d4381.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983752186171:android:df542d3e7eda5859b07f1e",
+        "android_client_info": {
+          "package_name": "com.example.currency_wallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983752186171-ov9cro64adh1hk71vsm4f6hegqvljc9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAn0vGDJOU07evjKsHCcBZ4wI0FHXVRGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983752186171-ov9cro64adh1hk71vsm4f6hegqvljc9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,3 @@
-import 'package:currency_wallet/common/index.dart';
 import 'package:currency_wallet/custom_widgets/index.dart';
 import 'package:currency_wallet/models/index.dart';
 import 'package:flutter/material.dart';
