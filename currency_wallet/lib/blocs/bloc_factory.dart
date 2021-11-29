@@ -15,5 +15,6 @@ class BlocFactory extends ServiceLocator {
     registerFactory<SettingsBloc>(() => SettingsBloc());
     registerFactory<CurrencyService>(() => CurrencyService());
     registerFactory<CurrencyMapper>(() => CurrencyMapper());
+    registerFactory<UsersBloc>(() => UsersBloc());
   }
 }

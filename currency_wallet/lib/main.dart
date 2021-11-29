@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
         kSettingsScreenRouteName: (_) => SettingsPage()
             .createWithProvider<SettingsBloc>(
                 (context) => BlocFactory.instance.get<SettingsBloc>()),
+        kUsersScreenRouteName: (_) => UsersScreen().createWithProvider<UsersBloc>(
+          (_) => BlocFactory.instance.get<UsersBloc>()..add(UsersEvent.init())),
       },
     );
   }

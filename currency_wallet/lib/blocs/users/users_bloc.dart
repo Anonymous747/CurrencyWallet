@@ -15,10 +15,16 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
   Stream<UsersState> mapEventToState(
     UsersEvent event,
   ) async* {
-    event.map(init: (event) async* {});
+    print('event = $event');
+    yield* event.map(
+      init: _handleInitEvent,
+    );
   }
 
-  Stream<UsersState> _handleInitEvent() async* {
+  Stream<UsersState> _handleInitEvent(_InitUsersEvent event) async* {
     FirebaseFirestore.instance.collection('User').doc('document').set({'Document key': 'Document value'});
+    print('======== _handleInitEvent FirebaseFirestore');
+
+    yield _InitialUsersState();
   }
 }

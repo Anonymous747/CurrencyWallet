@@ -10,11 +10,21 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: MaterialButton(
-          child: Text('Display the current rate'),
-          onPressed: () {
-            Navigator.pushNamed(context, kWalletScreenRouteName);
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MaterialButton(
+              child: Text('Display the current rate'),
+              onPressed: () {
+                Navigator.pushNamed(context, kWalletScreenRouteName);
+              },
+            ),
+            MaterialButton(
+              child: Text('Display current users'),
+              onPressed: () {
+              Navigator.pushNamed(context, kUsersScreenRouteName);
+            },),
+          ],
         ),
       ),
     );
