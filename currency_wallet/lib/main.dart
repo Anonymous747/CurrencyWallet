@@ -2,10 +2,12 @@ import 'package:currency_wallet/blocs/index.dart';
 import 'package:currency_wallet/blocs/settings/bloc/settings_bloc.dart';
 import 'package:currency_wallet/common/index.dart';
 import 'package:currency_wallet/screens/index.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await BlocFactory.instance.initialize();
 
   runApp(MyApp());

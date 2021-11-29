@@ -22,11 +22,11 @@ class LineCellLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-          child: Column(
+      child: Column(
         children: [
           DatesLine(datesTimeModel: datesTimeModel),
           Expanded(
-                    child: ListView.separated(
+            child: ListView.separated(
               itemCount: length,
               separatorBuilder: (_, __) => const SizedBox(height: 10),
               itemBuilder: (context, index) {
@@ -60,20 +60,20 @@ class DatesLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 40.0,
-        decoration: BoxDecoration(color: Colors.black26),
-        child: Row(
-    children: [
-      Expanded(flex: 2, child: SizedBox()),
-      datesTimeModel != null
-          ? Expanded(child: CenteredText(datesTimeModel!.todaysDay))
-          : const SizedBox(),
-      datesTimeModel != null
-          ? Expanded(child: CenteredText(datesTimeModel!.tomorrowsDay))
-          : const SizedBox(),
-      SizedBox(width: 20.0),
-    ],
-        ),
-      );
+      height: 40.0,
+      decoration: BoxDecoration(color: Colors.black26),
+      child: Row(
+        children: [
+          Expanded(flex: 2, child: SizedBox()),
+          datesTimeModel != null
+              ? Expanded(child: CenteredText(datesTimeModel!.todaysDay))
+              : const SizedBox(),
+          datesTimeModel != null
+              ? Expanded(child: CenteredText(datesTimeModel!.tomorrowsDay))
+              : const SizedBox(),
+          SizedBox(width: 20.0),
+        ],
+      ),
+    );
   }
 }
